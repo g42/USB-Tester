@@ -1,8 +1,8 @@
 
 <div  align="left">
-English: <a  title="English"  href="README.md"><img  src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg"  height="11px"/></div>
+English: <a  title="English"  href="README-en.md"><img  src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg"  height="11px"/></div>
 
-# USB Tester
+# Тестер портов USB
 ![alt text](https://github.com/g42/USB-Tester/blob/main/images/tester_2.4-sch-2.png)
 
 Данный тестер совмещает в себе две функции:
@@ -66,3 +66,5 @@ LOCK, что позволяет контролировать "зависание
 Также, предусмотрена защита USBLC6.
 Ширина тестера 17 мм, что позволяет использовать рядом
 расположенные разъемы USB для подключения других устройств.
+
+По любым вопросам, обращайтесь по электронной почте <a href="mailto:20kohm@gmail.com">20kohm@gmail.com</a>
