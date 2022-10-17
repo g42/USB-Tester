@@ -1,70 +1,30 @@
+<div align="left">
+ Русский язык: <a title="Русский" href="README-ru.md"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg" height="11px"/>
+</div>
 
-<div  align="left">
-English: <a  title="English"  href="README-en.md"><img  src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg"  height="11px"/></div>
-
-# Тестер портов USB
+# USB Port Tester.
 ![alt text](https://github.com/g42/USB-Tester/blob/main/images/tester_2.4-sch-2.png)
 
-Данный тестер совмещает в себе две функции:
-* Проверка сигнальных линий порта USB на
-наличие короткого замыкания или заниженного сопротивления.
-* Индикация инициализации устройства, по шине USB.
+This tester combines two functions:
+* Checking the data lines of a USB port for the presence of a short circuit or low resistance.
+* Indication of device initialization, via the USB bus.
 
-Тестер показывает инициализацию даже при отсутствии вывода
-изображения, но при исправном процессоре, хабе, памяти и BIOS.
-Если в компьютере неисправна видеосистема, экран и канал вывода
-видеосигнала, то тестер покажет инициализацию. Также это
-позволяет тестировать системные платы без сборки устройства и
-подключения экрана.
+The tester shows initialization even in the absence of image output but with a working CPU, PCH, RAM, and BIOS. 
+If the video system, screen, or video output channel is faulty, the tester will show initialization. It also allows you to test system boards without assembling the device and connecting the screen.
 
-При подключении тестера в порт выключенного устройства с нормальным сопротивлением линий - тестер остается в спящем режиме до появления питания на
-шине USB. При появлении питания - тестер начинает медленно
-моргать индикатором INIT. После успешной инициализации и опроса
-шины USB тестер издает короткий писк и индикатор INIT начинает
-моргать быстро. 
+When connecting the tester to the port of a switched-off device with normal line resistance, the tester remains in sleep mode until power appears on the USB bus. When power appears, the INIT indicator starts blinking slowly. After successful initialization and polling of the USB bus, the tester emits a short beep and the INIT indicator starts blinking rapidly.
 
-После инициализации на индикатор SHORT дублируется индикатор NUM
-LOCK. Это позволяет убедится в корректной работе USB:
-переключите режим NUM LOCK с клавиатуры - тестер покажет
-активен ли режим в данный момент. Специальных драйверов не
-требуется — тестер эмулирует стандартную HID клавиатуру.
+After initialization, the NUM LOCK status is duplicated by the SHORT indicator. This allows you to make sure that the USB is working correctly: switch the NUM LOCK mode from the keyboard - the tester will show whether the mode is currently active. No special drivers are required — the tester emulates a standard HID keyboard.
 
-По
-умолчанию тестер эмулирует периодическое нажатие кнопки CAPS
-LOCK, что позволяет контролировать "зависание" устройства по
-мерцанию индикатора CAPS LOCK на клавиатуре. Моргание CAPS
-можно отключить нажатием кнопки на тестере (при подключенном
-тестере). Повторное нажатие эмулирует набор теста. Нажмите кнопку
-еще раз, чтобы вернуться в режим мигания CAPS LOCK.
+By default, the tester emulates the periodic pressing of the CAPS LOCK button, which allows you to control the "hang" of the device by the flickering of the caps indicator on the keyboard. 
+You can disable blinking caps by pressing the button on the tester. Pressing again emulates keyboard input. Press the button again to return to the caps flashing mode.
 
-Проверка на наличие КЗ осуществляется автоматически, при
-подключении тестера к разъему USB. При наличии КЗ тестер издает
-непрерывный звуковой сигнал и зажигает индикатор "SHORT".
-Это позволяет быстро произвести первичную диагностику хаба (PCH)
-или, например, процессора U-серии со встроенным хабом. При этом,
-перед индикацией есть небольшая задержка (менее 1 сек), это
-необходимо для зарядки паразитной емкости линии и исключения
-ложного срабатывания. При нормальном сопротивлении линий — тестер остается в спящем
-режиме. Индикаторы при этом не задействованы.
+Checking for the line resistance is performed automatically when the tester is connected to the USB connector. If there is a short circuit, the tester emits a continuous beep and the "SHORT" indicator lights up. This allows you to quickly perform primary diagnostics of a hub (PCH) or, for example, a U-series processor with a built-in hub. At the same time, there is a small delay before the indication (less than 1 second). This is necessary to charge the parasitic capacity of the line and exclude a false alarm. At normal line resistance, the tester remains in sleep mode. The indicators are not involved in this case.
 
-Так как, в большинстве случаев, при неисправном USB, напряжение
-питания на портах USB отсутствует, тестер имеет встроенный
-аккумулятор, который необходим для замера сопротивления на
-сигнальных линиях. Его зарядка возможна от любого подходящего
-БП или от тестируемого устройства, при наличии 5В на разъеме USB.
-Время полного заряда около 1 часа. В нерабочем состоянии (когда
-тестер никуда не подключен) заряд не расходуется. Предусмотрена
-индикация заряда аккумулятора, для проверки нажмите кнопку на
-тестере. Последует 1 короткий писк и 1 мигание INIT - заряд батареи в
-норме. Либо 3 коротких писка и 1 мигание SHORT - батарея
-разряжена. Если реакции на кнопку нет - батарея в глубоком разряде,
-либо тестер неисправен. При низком заряде батареи возможен
-некорректный замер сопротивления.
+Since, in most cases, there is no power supply voltage on the faulty USB ports, the tester has a built-in battery, which is necessary for measuring the resistance on the signal lines. Its charging is possible from any suitable PSU or device if there is a 5V on the USB connector. The full charge time is about 1 hour. In the non-working state (when the tester is not connected anywhere), the charge is not consumed. There is an indication of the battery charge. To check, press the button on the tester. 1 short beep and 1 flashing INIT will follow if the battery charge is normal. Either 3 short beeps and 1 blinking SHORT if the battery is low. If there is no reaction to the button, then the battery is in a deep discharge state or the tester is faulty. When the battery is low, incorrect measurements are possible.
 
-Защитная оболочка тестера защищает проверяемый компьютер и
-компоненты тестера от попадания статики на сигнальные шины.
-Также, предусмотрена защита USBLC6.
-Ширина тестера 17 мм, что позволяет использовать рядом
-расположенные разъемы USB для подключения других устройств.
+The tester's protective shell is intended to protect the tester and the device against ESD. Also, there is a USBLC6 protection IC.
 
-По любым вопросам, обращайтесь по электронной почте <a href="mailto:20kohm@gmail.com">20kohm@gmail.com</a>
+The width of the tester is 17 mm, which allows you to use nearby USB connectors to connect other devices.
+
+For any questions, please contact by email <a href="mailto:20kohm@gmail.com">20kohm@gmail.com</a>
